@@ -52,9 +52,11 @@
                     <li class="nav__item">
                         <a href="#about" class="nav__link" data-i18n="nav.about">About</a>
                     </li>
+                    <!-- Hidden for now
                     <li class="nav__item">
                         <a href="#stack" class="nav__link" data-i18n="nav.stack">Stack</a>
                     </li>
+                    -->
                     <li class="nav__item">
                         <a href="#skills" class="nav__link" data-i18n="nav.skills">Skills</a>
                     </li>
@@ -82,12 +84,11 @@
                     <h1 class="hero-name">Jose<br>Vargas</h1>
                     <h2 class="hero-role"><span id="typed-text"></span><span class="hero-cursor" aria-hidden="true">|</span></h2>
                     <p class="hero-desc" data-i18n-html="hero.description">
-                        Specialized in <strong>Node.js</strong> · <strong>NestJS</strong> · <strong>TypeScript</strong><br>
-                        Hexagonal Architecture · DDD · Clean Code
+                        Specialized in <strong>Node.js</strong> · <strong>NestJS</strong> · <strong>TypeScript</strong>
                     </p>
                     <div class="hero-actions">
                         <a href="#contact" class="btn-primary" data-i18n="hero.cta.contact">Contact me</a>
-                        <a href="cv/backend_cv.pdf" class="btn-secondary" download>
+                        <a href="cv/Jose_Vargas_CV_English.pdf" class="btn-secondary" download>
                             <i class="bi bi-download"></i>
                             <span data-i18n="about.downloadCV">Download CV</span>
                         </a>
@@ -103,12 +104,6 @@
                         </a>
                         <a href="https://www.linkedin.com/in/jose-vargas-development-full-stack2025/" class="social-btn" target="_blank" aria-label="LinkedIn">
                             <i class="bi bi-linkedin"></i>
-                        </a>
-                        <a href="https://www.tiktok.com/@developer.uy" class="social-btn" target="_blank" aria-label="TikTok">
-                            <i class="bi bi-tiktok"></i>
-                        </a>
-                        <a href="https://www.instagram.com/developer_uy" class="social-btn" target="_blank" aria-label="Instagram">
-                            <i class="bi bi-instagram"></i>
                         </a>
                     </div>
                 </div>
@@ -129,9 +124,9 @@
                 </div>
                 <div class="about-content" data-aos="zoom-in" data-aos-delay="400">
                     <h2 class="about-name" data-i18n="about.name">Hi! I'm Jose Vargas</h2>
-                    <h4 class="about-role" data-i18n="about.role">Backend Developer</h4>
+                    <h4 class="about-role" data-i18n="about.role">Software Developer</h4>
                     <p class="about-bio" data-i18n-html="about.bio1">
-                        I'm a <strong>Backend Developer</strong> focused on designing and building robust server-side systems, REST APIs and business applications. I work primarily with <strong>NestJS</strong>, <strong>Node.js</strong> and <strong>TypeScript</strong>, with a strong emphasis on clean architecture, maintainability and long-term scalability. Check out my work in the <strong>Projects</strong> section.
+                        I'm a <strong>Software Developer</strong> focused on designing and building robust server-side systems, REST APIs and business applications. I work primarily with <strong>NestJS</strong>, <strong>Node.js</strong> and <strong>TypeScript</strong>, with a strong emphasis on clean architecture, maintainability and long-term scalability. Check out my work in the <strong>Projects</strong> section.
                     </p>
                     <ul class="about-details">
                         <li><span data-i18n="about.email.label">Email</span><span>jrvn.dev@gmail.com</span></li>
@@ -139,7 +134,7 @@
                         <li><span data-i18n="about.languages.label">Languages</span><span data-i18n="about.languages.value">Spanish (native) · English (intermediate)</span></li>
                         <li><span data-i18n="about.remote.label">Remote</span><span class="badge-available" data-i18n="about.remote.value">Available</span></li>
                     </ul>
-                    <a href="cv/backend_cv.pdf" class="btn-primary" download>
+                    <a href="cv/Jose_Vargas_CV_English.pdf" class="btn-primary" download>
                         <i class="bi bi-download"></i>
                         <span data-i18n="about.downloadCV">Download CV</span>
                     </a>
@@ -149,6 +144,7 @@
     </section>
 
     <!-- ===== TECH STACK SECTION ===== -->
+    <!-- Hidden for now
     <section id="stack" class="section-light">
         <div class="container">
             <div class="section-heading" data-aos="fade-up">
@@ -172,23 +168,14 @@
                     <p class="stack-card__desc" data-i18n="stack.nest.desc">Primary framework. Modules, Guards, Interceptors, DTOs.</p>
                 </div>
                 <div class="stack-card" data-aos="zoom-out-up" data-aos-delay="500">
-                    <div class="stack-card__icon"><i class="bi bi-layers"></i></div>
-                    <h3 class="stack-card__title" data-i18n="stack.hex.title">Hexagonal Arch.</h3>
-                    <p class="stack-card__desc" data-i18n="stack.hex.desc">Ports, adapters, decoupled use cases.</p>
-                </div>
-                <div class="stack-card" data-aos="zoom-out-up" data-aos-delay="600">
                     <div class="stack-card__icon"><i class="bi bi-database"></i></div>
                     <h3 class="stack-card__title" data-i18n="stack.sql.title">SQL / TypeORM</h3>
                     <p class="stack-card__desc" data-i18n="stack.sql.desc">Relational modeling, migrations, transactions.</p>
                 </div>
-                <div class="stack-card" data-aos="zoom-out-up" data-aos-delay="700">
-                    <div class="stack-card__icon"><i class="bi bi-bug"></i></div>
-                    <h3 class="stack-card__title" data-i18n="stack.test.title">Testing</h3>
-                    <p class="stack-card__desc" data-i18n="stack.test.desc">Unit testing on use cases. Coverage with SonarQube.</p>
-                </div>
             </div>
         </div>
     </section>
+    -->
 
     <!-- ===== SKILLS SECTION ===== -->
     <section id="skills" class="section-dark">
@@ -316,11 +303,16 @@
                         <div class="timeline__item">
                             <span class="timeline__date" data-i18n="resume.exp.1.date">05/2025 – Present</span>
                             <h4 class="timeline__title" data-i18n="resume.exp.1.title">Backend Developer</h4>
-                            <span class="timeline__org" data-i18n="resume.exp.1.org">Pormel S.A.</span>
+                            <span class="timeline__org" data-i18n="resume.exp.1.org">Pormel Software Energy · Montevideo, Uruguay</span>
                             <p class="timeline__body" data-i18n-html="resume.exp.1.body">
-                                <strong>EDEMSA:</strong> Notifications & claims system (NestJS, Mendoza AR)<br>
-                                <strong>Portal Vacaciones:</strong> Hexagonal Architecture (mining, Peru)<br>
-                                <strong>TDR:</strong> Refactor, testing, SonarQube (bidding, Peru)
+                                Backend development with Node.js, TypeScript, NestJS and Redis under hexagonal architecture and CQRS for EDEMSA, EDENOR and Volcan. Development of complete modules (domain, application and infrastructure) with CRUDs, REST APIs and cross-cutting auditing. Unit testing of critical use cases and reduction of technical debt with SonarQube. Persistence in PostgreSQL, MariaDB and Oracle DB; task management with Jira.
+                            </p>
+                        </div>
+                        <div class="timeline__item">
+                            <span class="timeline__date" data-i18n="resume.exp.2.date">Remote</span>
+                            <h4 class="timeline__title" data-i18n="resume.exp.2.title">Full Stack Developer</h4>
+                            <p class="timeline__body" data-i18n="resume.exp.2.body">
+                                Custom web application development for small businesses with React, Node.js, TypeScript, NestJS, and MongoDB Atlas.
                             </p>
                         </div>
                     </div>
@@ -343,6 +335,7 @@
             <div class="projects-grid">
 
                 <!-- Paqueteria24 -->
+                <!-- Hidden for now
                 <article class="project-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="project-card__image">
                         <img src="./img/paqueteria24-project.png" alt="Paqueteria24">
@@ -362,8 +355,10 @@
                         </div>
                     </div>
                 </article>
+                -->
 
                 <!-- TecniServi -->
+                <!-- Hidden for now
                 <article class="project-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="project-card__image">
                         <img src="https://tecni-servi.com/img/logo%20tecni.png" alt="TecniServi">
@@ -383,6 +378,7 @@
                         </div>
                     </div>
                 </article>
+                -->
 
                 <!-- Booking App -->
                 <article class="project-card" data-aos="fade-up" data-aos-delay="400">
@@ -469,6 +465,7 @@
                 </article>
 
                 <!-- Hostal Mayelewoo -->
+                <!-- Hidden for now
                 <article class="project-card" data-aos="fade-up" data-aos-delay="800">
                     <div class="project-card__image">
                         <img src="./img/hostal-mayele-project.jpg" alt="Hostal Mayelewoo">
@@ -488,6 +485,7 @@
                         </div>
                     </div>
                 </article>
+                -->
 
             </div>
         </div>
