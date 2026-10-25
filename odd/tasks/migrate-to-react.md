@@ -21,13 +21,15 @@ Migrate the static vanilla HTML/CSS/JS portfolio (index.html + dashboard.html) t
 
 ## Tasks
 - [x] T1 Scaffold: Vite+React+TS, Tailwind v4, Preline theme, router, .gitignore, public assets, shared Button/Input components, ApiConfig/ApiService/StorageService ported to TS, i18n provider ported
-- [ ] T2 Portfolio page (`/`): Navbar, Hero (typewriter), About, Projects, Contact form (Preline button/input styles), Footer, scroll animations, language switch
+- [x] T2 Portfolio page (`/`): Navbar, Hero (typewriter), About, Projects, Contact form (Preline button/input styles), Footer, scroll animations, language switch
 - [ ] T3 Dashboard page (`/dashboard`): stats, message list, status updates, filters as in js/dashboard.js
 - [ ] T4 Cleanup: delete legacy index.html/dashboard.html/js/css, update README.md + CLAUDE.md, final build check
 
 ## Progress / Evidence
 - T1: route=delegated-writer, commit=see git log: `chore: scaffold vite react tailwind preline app` (babd72b at time of writing). Observed: `npm run typecheck` ok, `npm run lint` ok, `npm run build` ok (CSS contains all user-mandated Button/Input utilities incl. `bg-primary`, `border-layer-line`, `placeholder:text-muted-foreground-1`, `focus:ring-primary-focus`), `npx vite --port 5173` serves HTML and /img, /cv, /tittles assets (200). No test runner (documented exception).
   - Notes: preline exports map does not expose CSS, so `src/index.css` imports `../node_modules/preline/variants.css` and `../node_modules/preline/css/themes/theme.css`. Legacy brand orange (#FF6B2B) mapped onto Preline `--primary-500/600/700`; `.dark` class on `<html>` with legacy near-black background. Legacy used Poppins; per task spec the new app uses Inter + JetBrains Mono. `StorageService` lived in legacy/js/dashboard.js (not api-config.js) and was ported into src/services/api.ts.
+- T2: route=delegated-writer, commit=2250fd0 `feat: port portfolio page to react with preline styles` (22 files, ~1100 lines: larger than the 400-line heuristic because it covers the whole page: 7 sections, navbar, footer, 5 hooks, 3 shared UI helpers, new i18n keys). Observed: `npm run typecheck` ok, `npm run lint` ok, `npm run build` ok (CSS includes `animate-cursor-blink`, `bg-primary`, `scroll-mt-20`), `npx vite --port 5173` serves HTML (stopped afterwards). Headless Chromium (playwright from ~/.cache/playwright-mobile-qa) at 1280px and 375px: no console/page errors, no horizontal overflow, typewriter running, active nav highlight, mobile menu opens and navigates, empty-submit shows validation message and re-translates on language switch. No test runner (documented exception).
+  - Notes: sections/ids follow legacy (`home`, `about`, `skills`, `resume`, `projects`, `contact`); Paqueteria24/TecniServi/Hostal stay hidden as in legacy. New i18n keys (en+es): `nav.switchLang`, `nav.main`, `projects.liveDemo`, `contact.form.validation.*`, `contact.form.sending|success|error`. Gaps vs legacy: AOS replaced by `Reveal` (IntersectionObserver, fade/slide only, honours reduced motion; no zoom variants); hero photo appears at the `lg` (1024px) breakpoint instead of 968px; form submits via `ApiService.createMessage` so a down API now falls back to localStorage (legacy showed an error); phone field is optional (legacy `required` was inert under `novalidate`).
 
 ## Next step
-T2
+T3
