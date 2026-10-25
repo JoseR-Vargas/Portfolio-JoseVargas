@@ -109,7 +109,7 @@ export function Resume() {
   const { t } = useI18n()
 
   return (
-    <section id="resume" className="scroll-mt-20 bg-background-1 py-24">
+    <section id="resume" className="hidden scroll-mt-20 bg-background-1 py-24">
       <Container>
         <SectionHeading tagKey="resume.tag" titleKey="resume.title" tone="dark" />
         <div className="grid gap-12 lg:grid-cols-2">

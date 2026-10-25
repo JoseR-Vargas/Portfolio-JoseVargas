@@ -11,10 +11,12 @@ interface Project {
   href: string
   descKey: StringKey
   tags: readonly string[]
+  /** Rendered with display: none until the project is shown again. */
+  hidden?: boolean
 }
 
-// Paqueteria24, TecniServi and Hostal Mayelewoo are commented out in the legacy
-// page ("Hidden for now"); their translations are kept for when they return.
+// Paqueteria24, TecniServi and Hostal Mayelewoo are not listed (hidden in the
+// legacy page); Avila Grill and LisCake use `hidden`. Translations are kept.
 const PROJECTS: readonly Project[] = [
   {
     title: 'Booking App — Barberia',
@@ -31,6 +33,7 @@ const PROJECTS: readonly Project[] = [
     href: 'https://avilagrillmiami.vercel.app/',
     descKey: 'projects.avila.desc',
     tags: ['HTML', 'CSS', 'JavaScript', 'Bootstrap 5'],
+    hidden: true,
   },
   {
     title: 'LisCake',
@@ -39,6 +42,7 @@ const PROJECTS: readonly Project[] = [
     href: 'https://liscake.netlify.app/',
     descKey: 'projects.liscake.desc',
     tags: ['HTML', 'CSS', 'JavaScript', 'WhatsApp API'],
+    hidden: true,
   },
   {
     title: 'Nice Surprise',
@@ -59,7 +63,7 @@ export function Projects() {
         <SectionHeading tagKey="projects.tag" titleKey="projects.title" subtitleKey="projects.subtitle" />
         <div className="grid gap-8 md:grid-cols-2">
           {PROJECTS.map((project, index) => (
-            <Reveal key={project.href} delay={200 + index * 100} className="h-full">
+            <Reveal key={project.href} delay={200 + index * 100} className={project.hidden ? 'hidden' : 'h-full'}>
               <article className="flex h-full flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm transition-shadow hover:shadow-xl">
                 <div className="group relative aspect-video overflow-hidden bg-neutral-200">
                   <img
