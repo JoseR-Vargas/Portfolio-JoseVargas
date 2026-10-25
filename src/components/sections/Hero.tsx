@@ -25,7 +25,7 @@ export function Hero() {
     >
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-[radial-gradient(ellipse_at_20%_50%,rgba(255,107,43,0.08)_0%,transparent_60%),radial-gradient(ellipse_at_80%_20%,rgba(255,107,43,0.05)_0%,transparent_50%)]"
+        className="absolute inset-0 bg-[radial-gradient(ellipse_at_20%_50%,rgba(0,120,193,0.18)_0%,transparent_60%),radial-gradient(ellipse_at_80%_20%,color-mix(in_oklab,var(--color-alpine-pink)_10%,transparent)_0%,transparent_50%)]"
       />
       <Container className="relative z-10 flex items-center justify-between gap-12">
         <Reveal delay={200} className="flex-1 text-center lg:max-w-xl lg:text-left">
@@ -57,7 +57,7 @@ export function Hero() {
         </Reveal>
 
         <Reveal delay={600} from="left" className="hidden shrink-0 items-center gap-6 lg:flex">
-          <div className="h-[370px] w-[300px] overflow-hidden rounded-3xl border-[3px] border-primary shadow-[0_0_40px_rgba(255,107,43,0.15)]">
+          <div className="h-[370px] w-[300px] overflow-hidden rounded-3xl border-[3px] border-primary shadow-[0_0_40px_color-mix(in_oklab,var(--color-alpine-pink)_25%,transparent)]">
             <img
               src="/img/Profile_picture_black_and_white.jpeg"
               alt="Jose Vargas"

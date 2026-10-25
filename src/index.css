@@ -8,6 +8,9 @@
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 
+  /* Alpine livery pink, used as a secondary accent next to the primary blue. */
+  --color-alpine-pink: #fd4bc7;
+
   /* Hero typewriter caret. */
   --animate-cursor-blink: cursor-blink 0.7s step-end infinite;
 
@@ -23,22 +26,23 @@
 }
 
 /*
- * Legacy brand accent (#FF6B2B) mapped onto Preline's primary scale and a
- * near-black dark background. Unlayered so it wins over theme.css variables.
+ * Alpine 2022 livery palette: #005BA9 and #0078C1 blues map onto Preline's
+ * primary scale, #FD4BC7 pink is the secondary accent, on a black base.
+ * Unlayered so it wins over theme.css variables.
  */
 :root {
-  --primary-500: #ff6b2b;
-  --primary-600: #e05a20;
-  --primary-700: #c04e18;
+  --primary-500: #0078c1;
+  --primary-600: #005ba9;
+  --primary-700: #004a8a;
 }
 
 .dark {
-  --background: #0e0e0e;
-  --background-1: #141414;
-  --background-2: #1a1a2e;
-  --layer: #141414;
-  --layer-line: #2a2a2a;
-  --layer-hover: #1f1f1f;
+  --background: #000000;
+  --background-1: #0a0a0a;
+  --background-2: #00111f;
+  --layer: #0a0a0a;
+  --layer-line: #1f2a33;
+  --layer-hover: #12181d;
 }
 
 html {
