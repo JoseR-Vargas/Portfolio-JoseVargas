@@ -9,7 +9,7 @@ const SOCIAL_LINKS = [
   { label: 'GitHub', href: 'https://github.com/JoseR-Vargas', icon: 'bi-github' },
   {
     label: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/jose-vargas-development-full-stack2025/',
+    href: 'https://www.linkedin.com/in/jose-vargas-dev',
     icon: 'bi-linkedin',
   },
 ] as const
