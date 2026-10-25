@@ -32,14 +32,12 @@ export const TRANSLATIONS = {
     "about.title": "About Me",
     "about.name": "Hi! I'm Jose Vargas",
     "about.role": "Software Developer",
-    "about.bio1": "I'm a <strong>Software Developer</strong> focused on designing and building robust server-side systems, REST APIs and business applications. I work primarily with <strong>NestJS</strong>, <strong>Node.js</strong> and <strong>TypeScript</strong>, with a strong emphasis on clean architecture, maintainability and long-term scalability. Check out my work in the <strong>Projects</strong> section.",
+    "about.bio1": "I'm a <strong>Software Developer</strong> focused on designing and building robust server-side systems, REST APIs and business applications. I work primarily with <strong>NestJS</strong>, <strong>Node.js</strong> and <strong>TypeScript</strong>, with a strong emphasis on clean architecture, maintainability and long-term scalability.",
     "about.downloadCV": "Download CV",
     "about.email.label": "Email",
     "about.location.label": "Location",
     "about.languages.label": "Languages",
     "about.languages.value": "Spanish (native) · English (intermediate)",
-    "about.remote.label": "Remote",
-    "about.remote.value": "Available",
     "stack.tag": "What I Use",
     "stack.title": "Tech Stack",
     "stack.node.title": "Node.js",
@@ -114,7 +112,7 @@ export const TRANSLATIONS = {
     "contact.form.sending": "Sending message...",
     "contact.form.success": "Message sent successfully!",
     "contact.form.error": "Error sending message. Please try again.",
-    "footer.rights": "© 2025 Jose Vargas · Backend Developer · Montevideo, Uruguay"
+    "footer.rights": "© 2023 Jose Vargas"
   },
   "es": {
     "meta.title": "Jose Vargas | Desarrollador Backend",
@@ -224,7 +222,7 @@ export const TRANSLATIONS = {
     "contact.form.sending": "Enviando mensaje...",
     "contact.form.success": "¡Mensaje enviado con éxito!",
     "contact.form.error": "Error al enviar el mensaje. Inténtalo de nuevo.",
-    "footer.rights": "© 2025 Jose Vargas · Desarrollador Backend · Montevideo, Uruguay"
+    "footer.rights": "© 2023 Jose Vargas "
   }
 } as const satisfies Record<Lang, Record<string, TranslationValue>>
 

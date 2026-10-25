@@ -9,7 +9,7 @@ export function Footer() {
       <Container>
         <p>{t('footer.rights')}</p>
         <p className="mt-1 text-xs text-muted-foreground-2">
-          Node.js · NestJS · TypeScript · Hexagonal Architecture
+          Node.js · NestJS · TypeScript 
         </p>
       </Container>
     </footer>

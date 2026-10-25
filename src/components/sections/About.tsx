@@ -34,7 +34,7 @@ export function About() {
             <p
               className="mb-6 leading-8 [&_strong]:text-neutral-900"
               dangerouslySetInnerHTML={{ __html: t('about.bio1') }}
-            />
+            /> 
             <ul className="mb-8 grid gap-3 sm:grid-cols-2">
               {details.map(({ labelKey, value, badge }) => (
                 <li key={labelKey} className="flex flex-col text-sm">
