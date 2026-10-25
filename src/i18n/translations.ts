@@ -9,7 +9,7 @@ export const TRANSLATIONS = {
   "en": {
     "meta.title": "Jose Vargas | Backend Developer",
     "hero.typewriter": [
-      "Software Engineer",
+      "Software Developer",
       "API Developer",
       "Node.js Developer"
     ],
@@ -117,7 +117,7 @@ export const TRANSLATIONS = {
   "es": {
     "meta.title": "Jose Vargas | Desarrollador Backend",
     "hero.typewriter": [
-      "Ingeniero de Software",
+      "Desarrollador de Software",
       "Desarrollador de APIs",
       "Desarrollador Node.js"
     ],
