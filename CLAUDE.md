@@ -4,42 +4,51 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Static portfolio website for Jose Vargas (Backend Developer). No build system, no package manager — pure HTML, CSS, and vanilla JavaScript served directly from the filesystem or a static host.
+Portfolio site for Jose Vargas (Backend Developer): a Vite + React 19 + TypeScript single-page app styled with Tailwind CSS v4 and the Preline design system. The previous vanilla HTML/CSS/JS version was removed in the `migrate-to-react` work; it remains in git history.
 
-## Running Locally
+## Commands
 
-Open `index.html` directly in a browser, or serve with any static server:
+Requires Node `^20.19.0 || >=22.12.0`.
 
 ```bash
-python3 -m http.server 8080
-# or
-npx serve .
+npm install
+npm run dev        # Vite dev server
+npm run build      # tsc -b && vite build -> dist/
+npm run preview    # serve dist/
+npm run lint       # ESLint
+npm run typecheck  # tsc -b
 ```
 
-For the contact form to work, the backend API must be running locally at `http://localhost:3002/api`. In production it points to `https://myportfolio-back-j9ji.onrender.com/api`. This detection is handled in `js/api-config.js` — if the API is unavailable, the form falls back to `localStorage`.
+There is no test runner. Verify changes with `typecheck`, `lint`, `build` and a dev-server smoke check.
+
+## API
+
+`src/services/api.ts` selects the backend by hostname: `http://localhost:3002/api` on localhost, `https://myportfolio-back-j9ji.onrender.com/api` otherwise. `ApiService` handles `/contacts`; `StorageService` is the `localStorage` fallback used when the API is unreachable.
 
 ## Architecture
 
-Two pages:
-- **`index.html`** — the main portfolio (Hero, About, Projects, Contact sections)
-- **`dashboard.html`** — admin view for contact form submissions; reads/writes via the same backend API
+Routes (`react-router-dom`, defined in `src/App.tsx`):
+- `/` — `PortfolioPage` (Navbar, Hero, About, Skills, Resume, Projects, Contact, Footer)
+- `/dashboard` — `DashboardPage` (contact messages: stats, filters, list, detail dialog, status updates)
 
-**JavaScript** (`js/`) uses ES6 classes organized by Single Responsibility:
-- `api-config.js` — `ApiConfig` (env detection), `ApiService` (CRUD against `/api/contacts`), `StorageService` (localStorage fallback). Loaded first; exposes `window.ApiConfig`.
-- `main.js` — portfolio page managers: `NavigationManager`, `SmoothScrollManager`, `FormManager`, `TypewriterEffect`, `ScrollAnimations`, all bootstrapped by `PortfolioApp`.
-- `dashboard.js` — dashboard-specific logic (stats, message list, status updates).
+`src/` layout:
+- `components/ui/` — shared primitives: `Button`, `Input`, `Container`, `SectionHeading`, `Reveal`
+- `components/sections/` — portfolio sections; `components/layout/` — `Navbar`, `Footer`
+- `components/dashboard/` — dashboard components, `messageUtils.ts`, `strings.ts` (dashboard copy is English-only)
+- `hooks/` — behavior as hooks: `useTypewriter`, `useScrollReveal`, `useActiveSection`, `useMessages`, `useDocumentMeta`, `usePrefersReducedMotion`
+- `services/api.ts` — `ApiConfig`, `ApiService`, `StorageService`
+- `i18n/` — `I18nProvider` and en/es `translations.ts`
+- `data/site.ts` — static site data
+- `index.css` — Tailwind v4 entry, Preline theme/variants imports, brand overrides (orange `#FF6B2B` on Preline `--primary-*`, dark theme)
 
-**CSS** (`css/`) uses BEM naming (`block__element--modifier`):
-- `styles.css` — global styles shared by both pages
-- `dashboard.css` — dashboard-only styles, loaded in addition to `styles.css`
-
-**External dependencies (CDN only):**
-- Bootstrap Icons 1.11.3
-- Google Fonts (Inter, JetBrains Mono)
+`public/` is served as-is: `img/`, `cv/`, `tittles/` (certificates), `_redirects` (SPA fallback for Netlify/Render static).
 
 ## Conventions
 
-- BEM for all CSS class names.
-- Each new JS feature belongs in a dedicated class; wire it up in `PortfolioApp.initializeManagers()`.
-- Certificate files live in `tittles/` (not `titles/`) — keep this path consistent with the HTML links.
-- Project images go in `img/`; prefer `.jpg` for photos, `.png` for screenshots with transparency.
+- Use the shared `Button` and `Input` from `src/components/ui` (Preline pill styles live there); do not re-declare those utility classes elsewhere.
+- Style with Tailwind utilities and Preline theme tokens (`bg-primary`, `bg-layer`, `text-foreground`, ...), not custom CSS classes.
+- Add new behavior as a component or hook; keep services framework-free in `src/services`.
+- Portfolio strings go through i18n (`useI18n` + `translations.ts`, both `en` and `es`).
+- Certificate files live in `public/tittles/` (not `titles/`); keep that spelling consistent with the links in the code.
+- Project images go in `public/img/`; prefer `.jpg` for photos, `.png` for screenshots with transparency.
+- Code, comments, UI copy and docs are written in English.
