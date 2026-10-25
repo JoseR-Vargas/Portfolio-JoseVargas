@@ -11,7 +11,7 @@ export function Input({ className, ...rest }: ComponentPropsWithoutRef<'input'>)
 export function Textarea({ className, ...rest }: ComponentPropsWithoutRef<'textarea'>) {
   return (
     <textarea
-      className={cx(FIELD_CLASSES, 'rounded-2xl', className)}
+      className={cx(FIELD_CLASSES.replace('rounded-full', 'rounded-2xl'), className)}
       {...rest}
     />
   )
