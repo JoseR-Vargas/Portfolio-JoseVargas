@@ -13,7 +13,7 @@ const NAV_ITEMS: ReadonlyArray<{ id: string; labelKey: StringKey }> = [
   { id: 'home', labelKey: 'nav.home' },
   { id: 'about', labelKey: 'nav.about' },
   { id: 'skills', labelKey: 'nav.skills' },
-  { id: 'resume', labelKey: 'nav.resume' },
+  // Resume section is hidden for now (display: none), so it has no nav link.
   { id: 'projects', labelKey: 'nav.projects' },
   { id: 'contact', labelKey: 'nav.contact' },
 ]

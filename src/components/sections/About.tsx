@@ -9,11 +9,10 @@ import { SectionHeading } from '../ui/SectionHeading'
 export function About() {
   const { t } = useI18n()
 
-  const details: ReadonlyArray<{ labelKey: StringKey; value: string; badge?: boolean }> = [
+  const details: ReadonlyArray<{ labelKey: StringKey; value: string }> = [
     { labelKey: 'about.email.label', value: EMAIL },
     { labelKey: 'about.location.label', value: LOCATION },
     { labelKey: 'about.languages.label', value: t('about.languages.value') },
-    { labelKey: 'about.remote.label', value: t('about.remote.value'), badge: true },
   ]
 
   return (
@@ -36,18 +35,10 @@ export function About() {
               dangerouslySetInnerHTML={{ __html: t('about.bio1') }}
             />
             <ul className="mb-8 grid gap-3 sm:grid-cols-2">
-              {details.map(({ labelKey, value, badge }) => (
+              {details.map(({ labelKey, value }) => (
                 <li key={labelKey} className="flex flex-col text-sm">
                   <span className="font-semibold text-neutral-900">{t(labelKey)}</span>
-                  <span
-                    className={
-                      badge
-                        ? 'mt-1 w-fit rounded-full bg-green-500/15 px-3 py-0.5 text-xs font-semibold text-green-700'
-                        : undefined
-                    }
-                  >
-                    {value}
-                  </span>
+                  <span>{value}</span>
                 </li>
               ))}
             </ul>
