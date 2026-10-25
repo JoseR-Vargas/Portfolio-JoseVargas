@@ -22,7 +22,7 @@ export default function DashboardPage() {
   const [filters, setFilters] = useState<MessageFilters>(DEFAULT_FILTERS)
   const [selectedId, setSelectedId] = useState<string | null>(null)
 
-  useDocumentMeta(DASHBOARD_TEXT.documentTitle, 'en')
+  useDocumentMeta(DASHBOARD_TEXT.documentTitle, 'en', '/img/icondashboard.png')
 
   const stats = useMemo(() => computeStats(messages), [messages])
   const visibleMessages = useMemo(() => filterMessages(messages, filters), [messages, filters])
