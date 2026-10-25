@@ -26,6 +26,8 @@ export const TRANSLATIONS = {
     "nav.contact": "Contact",
     "nav.openMenu": "Open menu",
     "nav.closeMenu": "Close menu",
+    "nav.switchLang": "Switch language",
+    "nav.main": "Main navigation",
     "about.tag": "About Me",
     "about.title": "About Me",
     "about.name": "Hi! I'm Jose Vargas",
@@ -83,6 +85,7 @@ export const TRANSLATIONS = {
     "projects.tag": "My work",
     "projects.title": "Projects",
     "projects.subtitle": "Here you will find some of the personal and client projects that I created with each project containing its own case study",
+    "projects.liveDemo": "Live Demo",
     "projects.p24.desc": "Lead-generation website for a courier company in Montevideo, Uruguay. It helps capture quote requests from businesses and individuals, while an admin panel lets the team review and manage customer submissions from one place.",
     "projects.tecni.desc": "Comprehensive website for a technical service company specializing in electronic device repairs. Features service listings, contact forms, location maps, and social media integration.",
     "projects.booking.desc": "Appointment booking app built for a barbershop in Montevideo. Customers can choose services, date, time and professional, while the admin receives real-time notifications and can manage booking cancellations.",
@@ -107,6 +110,11 @@ export const TRANSLATIONS = {
     "contact.form.namePh": "Your name",
     "contact.form.messagePh": "Tell me about your project...",
     "contact.form.submit": "Send Message",
+    "contact.form.validation.required": "Please fill in all fields",
+    "contact.form.validation.email": "Please enter a valid email address",
+    "contact.form.sending": "Sending message...",
+    "contact.form.success": "Message sent successfully!",
+    "contact.form.error": "Error sending message. Please try again.",
     "footer.rights": "© 2025 Jose Vargas · Backend Developer · Montevideo, Uruguay"
   },
   "es": {
@@ -129,6 +137,8 @@ export const TRANSLATIONS = {
     "nav.contact": "Contacto",
     "nav.openMenu": "Abrir menú",
     "nav.closeMenu": "Cerrar menú",
+    "nav.switchLang": "Cambiar idioma",
+    "nav.main": "Navegación principal",
     "about.tag": "Sobre mí",
     "about.title": "Sobre mí",
     "about.name": "¡Hola! Soy Jose Vargas",
@@ -186,6 +196,7 @@ export const TRANSLATIONS = {
     "projects.tag": "Mi trabajo",
     "projects.title": "Proyectos",
     "projects.subtitle": "Aquí encontrarás algunos de los proyectos personales y de clientes que creé, cada uno con su propio caso de estudio",
+    "projects.liveDemo": "Ver demo",
     "projects.p24.desc": "Sitio web de captación de leads para una empresa de mensajería en Montevideo, Uruguay. Ayuda a capturar solicitudes de cotización de empresas y particulares, mientras que un panel de administración permite al equipo revisar y gestionar las solicitudes desde un solo lugar.",
     "projects.tecni.desc": "Sitio web integral para una empresa de servicio técnico especializada en reparación de dispositivos electrónicos. Incluye listado de servicios, formularios de contacto, mapas de ubicación e integración con redes sociales.",
     "projects.booking.desc": "App de reserva de citas desarrollada para una barbería en Montevideo. Los clientes pueden elegir servicios, fecha, hora y profesional, mientras el administrador recibe notificaciones en tiempo real y puede gestionar cancelaciones.",
@@ -210,6 +221,11 @@ export const TRANSLATIONS = {
     "contact.form.namePh": "Tu nombre",
     "contact.form.messagePh": "Cuéntame sobre tu proyecto...",
     "contact.form.submit": "Enviar mensaje",
+    "contact.form.validation.required": "Por favor completa todos los campos",
+    "contact.form.validation.email": "Por favor ingresa un correo electrónico válido",
+    "contact.form.sending": "Enviando mensaje...",
+    "contact.form.success": "¡Mensaje enviado con éxito!",
+    "contact.form.error": "Error al enviar el mensaje. Inténtalo de nuevo.",
     "footer.rights": "© 2025 Jose Vargas · Desarrollador Backend · Montevideo, Uruguay"
   }
 } as const satisfies Record<Lang, Record<string, TranslationValue>>

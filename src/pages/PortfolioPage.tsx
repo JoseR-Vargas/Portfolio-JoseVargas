@@ -1,13 +1,25 @@
-import { Button } from '../components/ui/Button'
+import { Navbar } from '../components/layout/Navbar'
+import { About } from '../components/sections/About'
+import { Contact } from '../components/sections/Contact'
+import { Footer } from '../components/layout/Footer'
+import { Hero } from '../components/sections/Hero'
+import { Projects } from '../components/sections/Projects'
+import { Resume } from '../components/sections/Resume'
+import { Skills } from '../components/sections/Skills'
 
 export default function PortfolioPage() {
   return (
-    <main className="mx-auto max-w-3xl p-8">
-      <h1 className="mb-6 text-3xl font-bold">Portfolio</h1>
-      <div className="flex flex-wrap gap-3">
-        <Button variant="primary">Primary</Button>
-        <Button variant="secondary">Secondary</Button>
-      </div>
-    </main>
+    <>
+      <Navbar />
+      <main className="overflow-x-clip">
+        <Hero />
+        <About />
+        <Skills />
+        <Resume />
+        <Projects />
+        <Contact />
+      </main>
+      <Footer />
+    </>
   )
 }
