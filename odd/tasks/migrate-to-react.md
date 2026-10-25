@@ -26,7 +26,7 @@ Migrate the static vanilla HTML/CSS/JS portfolio (index.html + dashboard.html) t
 - [ ] T4 Cleanup: delete legacy index.html/dashboard.html/js/css, update README.md + CLAUDE.md, final build check
 
 ## Progress / Evidence
-- T1: route=delegated-writer, commit=bdbc146 (scaffold commit; this note added via amend, final hash in git log). Observed: `npm run typecheck` ok, `npm run lint` ok, `npm run build` ok (CSS contains all user-mandated Button/Input utilities incl. `bg-primary`, `border-layer-line`, `placeholder:text-muted-foreground-1`, `focus:ring-primary-focus`), `npx vite --port 5173` serves HTML and /img, /cv, /tittles assets (200). No test runner (documented exception).
+- T1: route=delegated-writer, commit=see git log: `chore: scaffold vite react tailwind preline app` (babd72b at time of writing). Observed: `npm run typecheck` ok, `npm run lint` ok, `npm run build` ok (CSS contains all user-mandated Button/Input utilities incl. `bg-primary`, `border-layer-line`, `placeholder:text-muted-foreground-1`, `focus:ring-primary-focus`), `npx vite --port 5173` serves HTML and /img, /cv, /tittles assets (200). No test runner (documented exception).
   - Notes: preline exports map does not expose CSS, so `src/index.css` imports `../node_modules/preline/variants.css` and `../node_modules/preline/css/themes/theme.css`. Legacy brand orange (#FF6B2B) mapped onto Preline `--primary-500/600/700`; `.dark` class on `<html>` with legacy near-black background. Legacy used Poppins; per task spec the new app uses Inter + JetBrains Mono. `StorageService` lived in legacy/js/dashboard.js (not api-config.js) and was ported into src/services/api.ts.
 
 ## Next step
