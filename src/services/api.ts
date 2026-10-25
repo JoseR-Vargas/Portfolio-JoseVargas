@@ -8,6 +8,8 @@ export interface ContactInput {
 
 export interface ContactMessage extends ContactInput {
   id: string
+  /** MongoDB identifier, present when the message comes from the API. */
+  _id?: string
   status: string
   createdAt: string
 }
